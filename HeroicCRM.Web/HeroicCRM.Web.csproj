@@ -229,6 +229,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResults\BetterJsonResult.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\EFConfig.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="Models\RiskViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\DateExtensions.cs" />
+    <Compile Include="Utilities\JsonExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
