@@ -9,8 +9,7 @@
 <form novalidate
       name="vm.form"
       ng-controller="EditProfileController as vm"
-      ng-submit="vm.save()"
-      ng-init='vm.init(@Html.JsonFor(Model))'
+      ng-submit="vm.save()"      
       style="max-width: 500px;">
     <fieldset ng-disabled="vm.saving">
 

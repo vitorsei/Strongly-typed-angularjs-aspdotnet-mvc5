@@ -203,7 +203,7 @@
     <Content Include="js\app\customer\EditCustomerDirective.js" />
     <Content Include="js\app\customer\AddCustomerDirective.js" />
     <Content Include="js\app\customer\templates\addCustomer.tmpl.html" />
-    <Content Include="js\app\customer\templates\customerDetails.tmpl.html" />
+    <Content Include="js\app\customer\templates\customerDetails.tmpl.cshtml" />
     <Content Include="js\app\customer\templates\editCustomer.tmpl.html" />
     <Content Include="js\app\customer\CustomerDetailsDirective.js" />
     <Content Include="js\app\customer\customerSvc.js" />
@@ -238,6 +238,7 @@
     <Compile Include="App_Start\SeedData.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\StructureMapConfig.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HeroicCRMControllerBase.cs" />
@@ -289,6 +290,7 @@
     <Content Include="css\ui-grid.eot" />
     <Content Include="css\ui-grid.ttf" />
     <Content Include="css\ui-grid.woff" />
+    <Content Include="js\app\web.config" />
     <None Include="Views\Authentication\Login.cshtml" />
     <None Include="Views\Customer\Index.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
