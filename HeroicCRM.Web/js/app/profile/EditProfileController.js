@@ -9,11 +9,11 @@
 
 		vm.profile = {};
 		vm.save = save;
+		vm.init = init;
 
-		$http.post('/Profile/LoadProfile')
-			.success(function (profile) {
-				vm.profile = profile;
-			});
+		function init(profile) {
+		    vm.profile = profile;
+		}
 
 		function save() {
 			vm.saving = true;
