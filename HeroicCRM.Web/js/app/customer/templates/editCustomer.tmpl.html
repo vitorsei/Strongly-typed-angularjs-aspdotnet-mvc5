@@ -1,0 +1,68 @@
+﻿<form novalidate
+	  name="vm.form"
+	  ng-submit="vm.save()">
+	<fieldset ng-disabled="vm.saving">
+
+		<div class="modal-header">
+			<h3 class="modal-title">Edit Customer</h3>
+		</div>
+
+		<div class="modal-body">
+
+			<div class="alert alert-info" ng-hide="vm.errorMessage != null">
+				Make changes to the customer below.
+			</div>
+			<div class="alert alert-danger" ng-show="vm.errorMessage != null">
+				{{vm.errorMessage}}
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="Name">Name</label>
+				<input required ng-model="vm.customer.Name"
+					   class="form-control" name="Name" type="text" placeholder="Full name (ex: John Smith)...">
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="WorkEmail">Work Email</label>
+				<input required ng-model="vm.customer.WorkEmail"
+					   class="form-control" name="WorkEmail" type="email" placeholder="user@domain.com...">
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="HomeEmail">Home Email</label>
+				<input ng-model="vm.customer.HomeEmail"
+					   class="form-control" name="HomeEmail" type="email" placeholder="user@domain.com...">
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="WorkPhone">Work Phone</label>
+				<input required ng-model="vm.customer.WorkPhone"
+					   class="form-control" name="WorkPhone" type="text" placeholder="(555) 555-5555...">
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="HomePhone">Home Phone</label>
+				<input ng-model="vm.customer.HomePhone"
+					   class="form-control" name="HomePhone" type="text" placeholder="(555) 555-5555...">
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="WorkAddress">Work Address</label>
+				<textarea required ng-model="vm.customer.WorkAddress"
+						  class="form-control" name="WorkAddress" placeholder="123 Main Street..."></textarea>
+			</div>
+
+			<div class="form-group has-feedback">
+				<label class="control-label" for="HomeAddress">Home Address</label>
+				<textarea ng-model="vm.customer.HomeAddress"
+						  class="form-control" name="HomeAddress" placeholder="123 Main Street..."></textarea>
+			</div>
+		</div>
+
+		<div class="modal-footer">
+			<button class="btn btn-success">Save</button>
+			<button type="button" class="btn btn-warning" ng-click="$parent.$dismiss()">Cancel</button>
+		</div>
+
+	</fieldset>
+</form>
