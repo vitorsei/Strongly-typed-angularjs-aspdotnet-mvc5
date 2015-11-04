@@ -1,9 +1,13 @@
-﻿(function() {
-	'use strict';
+﻿(function () {
+    'use strict';
 
-	if (Array.prototype.addRange) return;
+    Object.defineProperty(Array.prototype, 'count', {
+        get: function () { return this.length; }
+    });
 
-	Array.prototype.addRange = function (target) {
-		this.push.apply(this, target);
-	};
+    if (Array.prototype.addRange) return;
+
+    Array.prototype.addRange = function (target) {
+        this.push.apply(this, target);
+    };
 })();
