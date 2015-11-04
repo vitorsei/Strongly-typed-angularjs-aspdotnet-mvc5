@@ -1,7 +1,11 @@
-﻿@DateTime.Now
+﻿@using HeroicCRM.Web.Helpers
+@model HeroicCRM.Web.Models.CustomerViewModel
+@{
+    var customer = Html.Angular().ModelFor("vm.customer");
+}
 <div class="panel panel-default">
     <div class="panel-heading">
-        {{vm.customer.Name}} <a href="" ng-click="vm.edit()"><i class="fa fa-edit"></i></a>
+        @customer.BindingFor(x => x.Name) <a href="" ng-click="vm.edit()"><i class="fa fa-edit"></i></a>
         <div class="pull-right">
             <a class="btn btn-default" href=""
                ng-class="{active: vm.selectedView == 'details'}"
@@ -21,7 +25,7 @@
         </div>
     </div>
     <table class="table" ng-show="vm.selectedView == 'details'">
-        <tr class="info text-center" ng-show="vm.customer.TerminationDate">
+        <tr class="info text-center" ng-show="@customer.ExpressionFor(x => x.TerminationDate)">
             <td colspan="4">
                 Inactive Customer
             </td>
@@ -29,20 +33,20 @@
         <tr>
             <th>E-mail</th>
             <td>
-                Work: {{vm.customer.WorkEmail}}<br />
-                Home: {{vm.customer.HomeEmail}}
+                Work: @customer.BindingFor(x => x.WorkEmail)<br />
+                Home: @customer.BindingFor(x => x.HomeEmail)
             </td>
             <th>Phone</th>
             <td>
-                Office: {{vm.customer.WorkPhone}}<br />
-                Mobile: {{vm.customer.HomePhone}}
+                Office: @customer.BindingFor(x => x.WorkPhone)<br />
+                Mobile: @customer.BindingFor(x => x.HomePhone)
             </td>
         </tr>
         <tr>
             <th>Work Address</th>
-            <td style="white-space: pre">{{vm.customer.WorkAddress}}</td>
+            <td style="white-space: pre">@customer.BindingFor(x => x.WorkAddress)</td>
             <th>Home Address</th>
-            <td style="white-space: pre">{{vm.customer.HomeAddress}}</td>
+            <td style="white-space: pre">@customer.BindingFor(x => x.HomeAddress)</td>
         </tr>
     </table>
 
@@ -52,14 +56,15 @@
                 <span class="fa fa-2x fa-dollar text-success"></span>
             </div>
             <div class="col-md-11">
-                <p ng-show="vm.customer.Opportunities.length == 0">There are no opportunities for this customer.</p>
-                <div ng-repeat="opportunity in vm.customer.Opportunities">
+                <p ng-show="@customer.ExpressionFor(x => x.Opportunities.Count) == 0">There are no opportunities for this customer.</p>
+                @using (var opportunity = customer.Repeat(x => x.Opportunities, "opportunity"))
+                {
                     <hr ng-hide="$index == 0" />
                     <h3>
-                        {{opportunity.Title}}
+                        @opportunity.BindingFor(x => x.Title)
                     </h3>
-                    <p>{{opportunity.Description}}</p>
-                </div>
+                    <p>@opportunity.BindingFor(x => x.Description)</p>
+                }
                 <p>
                     <a class="add-btn" href="" ng-click="vm.addOpportunity()">Add a new opportunity</a>
                 </p>
@@ -72,14 +77,15 @@
                 <span class="fa fa-2x fa-warning text-danger"></span>
             </div>
             <div class="col-md-11">
-                <p ng-show="vm.customer.Risks.length == 0">There are no risks for this customer.</p>
-                <div ng-repeat="risk in vm.customer.Risks">
+                <p ng-show="@customer.ExpressionFor(x => x.Risks.Count) == 0">There are no risks for this customer.</p>
+                @using (var risk = customer.Repeat(x => x.Risks, "risk"))
+                {
                     <hr ng-hide="$index == 0" />
                     <h3>
-                        {{risk.Title}}
+                        @risk.BindingFor(x => x.Title)
                     </h3>
-                    <p>{{risk.Description}}</p>
-                </div>
+                    <p>@risk.BindingFor(x => x.Description)</p>
+                }
 
                 <p>
                     <a class="add-btn" href="" ng-click="vm.addRisk()">Add a new risk</a>
