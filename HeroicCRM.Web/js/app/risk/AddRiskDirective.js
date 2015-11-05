@@ -1,45 +1,45 @@
-﻿(function() {
-	'use strict';
+﻿(function () {
+    'use strict';
 
-	window.app.directive('addRisk', addRisk);
+    window.app.directive('addRisk', addRisk);
 
-	function addRisk() {
-		return {
-			scope: {
-				customer: "="
-			},
-			templateUrl: '/js/app/risk/templates/addRisk.tmpl.html',
-			controller: controller,
-			controllerAs: 'vm'
-		}
-	}
+    function addRisk() {
+        return {
+            scope: {
+                customer: "="
+            },
+            templateUrl: '/risk/template/addRisk.tmpl.cshtml',
+            controller: controller,
+            controllerAs: 'vm'
+        }
+    }
 
-	controller.$inject = ['$scope', '$http'];
-	function controller($scope, $http) {
-		var vm = this;
+    controller.$inject = ['$scope', '$http'];
+    function controller($scope, $http) {
+        var vm = this;
 
-		vm.saving = false;
-		vm.risk = {
-			customerId: $scope.customer.Id
-		}
+        vm.saving = false;
+        vm.risk = {
+            customerId: $scope.customer.id
+        }
 
-		vm.add = add;
+        vm.add = add;
 
-		function add() {
-			vm.saving = true;
+        function add() {
+            vm.saving = true;
 
-			$http.post('/Risk/Add', vm.risk)
+            $http.post('/Risk/Add', vm.risk)
 				.success(function (data) {
-					$scope.customer.Risks.push(data);
-					//Close the modal
-					$scope.$parent.$close();
+				    $scope.customer.risks.push(data);
+				    //Close the modal
+				    $scope.$parent.$close();
 				})
 				.error(function (data) {
-					vm.errorMessage = 'There was a problem adding the risk: ' + data;
+				    vm.errorMessage = 'There was a problem adding the risk: ' + data;
 				})
 				.finally(function () {
-					vm.saving = false;
+				    vm.saving = false;
 				});
-		}
-	}
+        }
+    }
 })();

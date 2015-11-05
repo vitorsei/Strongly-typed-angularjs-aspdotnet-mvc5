@@ -36,7 +36,7 @@ namespace HeroicCRM.Web.Controllers
 
 			var model = Mapper.Map<CustomerOpportunityViewModel>(opportunity);
 
-			return Json(model);
+			return BetterJson(model);
 		}
 	}
 }

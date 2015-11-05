@@ -1,0 +1,46 @@
+﻿@using HeroicCRM.Web.Helpers
+@model HeroicCRM.Web.Models.AddCustomerForm
+@{
+    var customer = Html.Angular().ModelFor("vm.customer");
+}
+<form novalidate
+      name="vm.form"
+      ng-submit="vm.add()">
+    <fieldset ng-disabled="vm.saving">
+
+        <div class="modal-header">
+            <h3 class="modal-title">Add New Customer</h3>
+        </div>
+
+        <div class="modal-body">
+
+            <div class="alert alert-info" ng-hide="vm.errorMessage != null">
+                Enter details for the new customer below.
+            </div>
+            <div class="alert alert-danger" ng-show="vm.errorMessage != null">
+                {{vm.errorMessage}}
+            </div>
+
+            @customer.FormGroupFor(x => x.Name)
+
+            @customer.FormGroupFor(x => x.WorkEmail)
+
+            @customer.FormGroupFor(x => x.HomeEmail)
+
+            @customer.FormGroupFor(x => x.WorkPhone)
+
+            @customer.FormGroupFor(x => x.HomePhone)
+
+            @customer.FormGroupFor(x => x.WorkAddress)
+
+            @customer.FormGroupFor(x => x.HomeAddress)
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-success">Add</button>
+            <button type="button" class="btn btn-warning" ng-click="$dismiss()">Cancel</button>
+        </div>
+
+    </fieldset>
+</form>
