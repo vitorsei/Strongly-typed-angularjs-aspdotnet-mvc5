@@ -218,6 +218,7 @@
     <Content Include="js\app\risk\AddRiskDirective.js" />
     <Content Include="js\app\risk\templates\addRisk.tmpl.cshtml" />
     <Content Include="js\app\utility\ArrayExtensions.js" />
+    <Content Include="js\app\utility\FormGroupValidationDirective.js" />
     <Content Include="js\app\utility\InputValidationIconsDirective.js" />
     <Content Include="js\app\utility\ParseDateFilter.js" />
     <Content Include="js\bootstrap.js" />
