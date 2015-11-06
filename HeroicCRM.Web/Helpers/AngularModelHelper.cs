@@ -4,8 +4,8 @@
 using System.Web;
 using System.Web.Mvc;
 using HeroicCRM.Web.Utilities;
-﻿using HtmlTags;
-﻿using Humanizer;
+using HtmlTags;
+using Humanizer;
 
 namespace HeroicCRM.Web.Helpers
 {
@@ -66,18 +66,17 @@ namespace HeroicCRM.Web.Helpers
 
         public HtmlTag FormGroupFor<TProp>(Expression<Func<TModel, TProp>> property)
         {
-            var metadata = ModelMetadata.FromLambdaExpression(property,
-                new ViewDataDictionary<TModel>());
+            var metadata = ModelMetadata.FromLambdaExpression(property, new ViewDataDictionary<TModel>());
 
-            //Turns x => x.SomeName into "SomeName"
             var name = ExpressionHelper.GetExpressionText(property);
 
-            //Turns x => x.SomeName into vm.model.someName
             var expression = ExpressionForInternal(property);
 
-            //Creates <div class="form-group">
+            //Creates <div class="form-group has-feedback"
+            //				form-group-validation="Name">
             var formGroup = new HtmlTag("div")
-                .AddClasses("form-group");
+                .AddClasses("form-group", "has-feedback")
+                .Attr("form-group-validation", name);
 
             var labelText = metadata.DisplayName ?? name.Humanize(LetterCasing.Title);
 
@@ -93,7 +92,6 @@ namespace HeroicCRM.Web.Helpers
 
             var placeholder = metadata.Watermark ??
                               (labelText + "...");
-
             //Creates <input ng-model="expression"
             //		   class="form-control" name="Name" type="text" >
             var input = new HtmlTag(tagName)
@@ -103,10 +101,23 @@ namespace HeroicCRM.Web.Helpers
                 .Attr("type", "text")
                 .Attr("placeholder", placeholder);
 
+            ApplyValidationToInput(input, metadata);
+
             return formGroup
                 .Append(label)
                 .Append(input);
         }
 
+        private void ApplyValidationToInput(HtmlTag input, ModelMetadata metadata)
+        {
+            if (metadata.IsRequired)
+                input.Attr("required", "");
+
+            if (metadata.DataTypeName == "EmailAddress")
+                input.Attr("type", "email");
+
+            if (metadata.DataTypeName == "PhoneNumber")
+                input.Attr("pattern", @"[\ 0-9()-]+");
+        }
     }
 }
