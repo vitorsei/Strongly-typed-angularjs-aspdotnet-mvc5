@@ -5,7 +5,7 @@
 }
 <form novalidate
       name="vm.form"
-      ng-submit="vm.add()">
+      ng-submit="vm.form.&valid() && vm.add()">
     <fieldset ng-disabled="vm.saving">
 
         <div class="modal-header">

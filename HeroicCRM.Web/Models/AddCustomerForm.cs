@@ -1,26 +1,30 @@
-﻿using Heroic.AutoMapper;
+﻿using System.ComponentModel.DataAnnotations;
+using Heroic.AutoMapper;
 using HeroicCRM.Web.Core;
-using System.ComponentModel.DataAnnotations;
 
 namespace HeroicCRM.Web.Models
 {
-	public class AddCustomerForm : IMapTo<Customer>
-	{
-		[Display(Name = "Full Name", Prompt="Full Name (ex: John Doe)")]
+    public class AddCustomerForm : IMapTo<Customer>
+    {
+        [Required, Display(Name = "Full Name", Prompt = "Full Name (ex: John Doe)...")]
         public string Name { get; set; }
 
-		public string WorkEmail { get; set; }
+        [Required, DataType(DataType.EmailAddress)]
+        public string WorkEmail { get; set; }
 
-		public string HomeEmail { get; set; }
+        [DataType(DataType.EmailAddress)]
+        public string HomeEmail { get; set; }
 
-		public string WorkPhone { get; set; }
+        [Required, DataType(DataType.PhoneNumber)]
+        public string WorkPhone { get; set; }
 
-		public string HomePhone { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string HomePhone { get; set; }
 
-		[DataType(DataType.MultilineText)]
+        [Required, DataType(DataType.MultilineText)]
         public string WorkAddress { get; set; }
 
         [DataType(DataType.MultilineText)]
         public string HomeAddress { get; set; }
-	}
+    }
 }
