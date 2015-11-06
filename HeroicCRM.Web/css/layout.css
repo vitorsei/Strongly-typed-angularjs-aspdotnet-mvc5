@@ -96,3 +96,7 @@ textarea {
 .btn-circle {
 	border-radius: 50%;
 }
+
+.has-feedback ng-transclude ~ input-validation-icons .form-control-feedback {
+	top: 26px;
+}
