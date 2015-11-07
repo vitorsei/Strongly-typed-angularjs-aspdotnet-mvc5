@@ -1,13 +1,15 @@
-﻿@model dynamic
+﻿@using HeroicCRM.Web.Helpers
+@using HeroicCRM.Web.Models
+@model dynamic
 
 @{
-	ViewBag.Title = "Reports";
+    ViewBag.Title = "Reports";
 }
 
 <h1 class="page-header">
-	Reports
+    Reports
 </h1>
 
-<new-customers-report ></new-customers-report>
-
-<lost-customers-report ></lost-customers-report>
+@(Html.Angular().GridFor<ReportController>(c => c.NewCustomers()).Title("New Customers"))
+    
+<lost-customers-report></lost-customers-report>
