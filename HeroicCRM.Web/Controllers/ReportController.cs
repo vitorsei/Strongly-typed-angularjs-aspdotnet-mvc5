@@ -30,7 +30,7 @@ namespace HeroicCRM.Web.Controllers
 			var customers = _context.Customers.Where(x => x.CreateDate >= startOfMonth && x.CreateDate <= endOfMonth)
 				.Project().To<NewCustomerReportViewModel>().ToArray();
 
-			return Json(customers);
+			return BetterJson(customers);
 		}
 
 		public JsonResult LostCustomers()
