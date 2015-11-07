@@ -261,6 +261,7 @@
     <Compile Include="Helpers\AngularHelper.cs" />
     <Compile Include="Helpers\AngularModelHelper.cs" />
     <Compile Include="Helpers\AngularNgRepeatHelper.cs" />
+    <Compile Include="Helpers\GridTag.cs" />
     <Compile Include="Helpers\JsonHtmlHelpers.cs" />
     <Compile Include="Helpers\UIRatingTag.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />

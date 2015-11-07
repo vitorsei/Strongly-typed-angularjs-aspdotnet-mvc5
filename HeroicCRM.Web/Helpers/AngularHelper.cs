@@ -72,7 +72,15 @@ namespace HeroicCRM.Web.Helpers
         public UIRatingTag UIRating(string model)
         {
             return new UIRatingTag(model);
-        }       
+        }
+
+        public GridTag GridFor<TController>(Expression<Action<TController>> targetAction)
+                    where TController : Controller
+        {
+            var dataUrl = _htmlHelper.BuildUrlFromExpression(targetAction);
+
+            return new GridTag(dataUrl);
+        }
 
     }
 }
