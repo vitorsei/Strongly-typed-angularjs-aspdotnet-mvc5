@@ -25,6 +25,13 @@
         </div>
     </div>
     <table class="table" ng-show="vm.selectedView == 'details'">
+        <tr>
+            <td colspan="4">
+                Rate this customer: @(Html.Angular().UIRating("vm.customer.rating")
+                                          .NgClick("vm.setRating()")
+                                          .Max(10))
+            </td>
+        </tr>
         <tr class="info text-center" ng-show="@customer.ExpressionFor(x => x.TerminationDate)">
             <td colspan="4">
                 Inactive Customer
@@ -86,7 +93,6 @@
                     </h3>
                     <p>@risk.BindingFor(x => x.Description)</p>
                 }
-
                 <p>
                     <a class="add-btn" href="" ng-click="vm.addRisk()">Add a new risk</a>
                 </p>

@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Web.Mvc;
 using HtmlTags;
+using Microsoft.Web.Mvc;
 
 namespace HeroicCRM.Web.Helpers
 {
@@ -44,12 +45,12 @@ namespace HeroicCRM.Web.Helpers
                 if (prop.GetCustomAttributes().OfType<HiddenInputAttribute>().Any()) continue;
 
                 var formGroupForProp = formGroupForMethodGeneric
-                                    .MakeGenericMethod(prop.PropertyType);
+                    .MakeGenericMethod(prop.PropertyType);
 
                 var propertyLambda = MakeLambda(prop);
 
                 var formGroupTag = (HtmlTag)formGroupForProp.Invoke(modelHelper,
-                                    new[] { propertyLambda });
+                    new[] { propertyLambda });
 
                 wrapperTag.Append(formGroupTag);
             }
@@ -67,5 +68,11 @@ namespace HeroicCRM.Web.Helpers
             //x => x.PropName
             return Expression.Lambda(funcType, property, parameter);
         }
+
+        public UIRatingTag UIRating(string model)
+        {
+            return new UIRatingTag(model);
+        }       
+
     }
 }
