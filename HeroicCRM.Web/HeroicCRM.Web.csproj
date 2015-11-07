@@ -220,6 +220,7 @@
     <Content Include="js\app\utility\ArrayExtensions.js" />
     <Content Include="js\app\utility\FormGroupValidationDirective.js" />
     <Content Include="js\app\utility\InputValidationIconsDirective.js" />
+    <Content Include="js\app\utility\MvcGridDirective.js" />
     <Content Include="js\app\utility\ParseDateFilter.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
