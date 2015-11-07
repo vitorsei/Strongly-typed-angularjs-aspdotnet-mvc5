@@ -1,11 +1,11 @@
 ﻿@using HeroicCRM.Web.Helpers
-@model HeroicCRM.Web.Models.AddCustomerForm
+@model HeroicCRM.Web.Models.AddCustomerForm
 @{
     var customer = Html.Angular().ModelFor("vm.customer");
 }
 <form novalidate
       name="vm.form"
-      ng-submit="vm.form.&valid() && vm.add()">
+      ng-submit="vm.form.$valid && vm.add()">
     <fieldset ng-disabled="vm.saving">
 
         <div class="modal-header">
@@ -21,19 +21,7 @@
                 {{vm.errorMessage}}
             </div>
 
-            @customer.FormGroupFor(x => x.Name)
-
-            @customer.FormGroupFor(x => x.WorkEmail)
-
-            @customer.FormGroupFor(x => x.HomeEmail)
-
-            @customer.FormGroupFor(x => x.WorkPhone)
-
-            @customer.FormGroupFor(x => x.HomePhone)
-
-            @customer.FormGroupFor(x => x.WorkAddress)
-
-            @customer.FormGroupFor(x => x.HomeAddress)
+            @Html.Angular().FormForModel("vm.customer")
 
         </div>
 
