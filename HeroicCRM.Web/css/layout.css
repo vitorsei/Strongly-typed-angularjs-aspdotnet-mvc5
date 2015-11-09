@@ -31,12 +31,12 @@ body {
 
 .btn.btn-red {
 	color: white;
-	background-color: #d9534f;
+	background-color: #ff7700;
 }
 
 .btn.btn-red:hover {
 	color: white;
-	background-color: #b52b27;
+	background-color: #bd6110;
 }
 
 .col-md-1.half {

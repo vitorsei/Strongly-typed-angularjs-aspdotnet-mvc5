@@ -15,12 +15,12 @@
             <a class="btn btn-green" href=""
                ng-class="{active: vm.selectedView == 'wishes'}"
                ng-click="vm.setView('wishes')">
-                <i class="fa fa-usd"></i> Wishes
+                <i class="fa fa-star"></i> Wishes
             </a>
             <a class="btn btn-red" href=""
                ng-class="{active: vm.selectedView == 'products'}"
                ng-click="vm.setView('products')">
-                <i class="fa fa-exclamation-triangle"></i>Products
+                <i class="fa fa-exchange"></i> Products
             </a>
         </div>
     </div>
@@ -60,7 +60,7 @@
     <div class="panel-body wish-list" ng-show="vm.selectedView == 'wishes'">
         <div class="row">
             <div class="col-md-1 half">
-                <span class="fa fa-2x fa-dollar text-success"></span>
+                <span class="fa fa-2x fa-star text-success"></span>
             </div>
             <div class="col-md-11">
                 <p ng-show="@customer.ExpressionFor(x => x.Wishes.Count) == 0">There are no wishes for this customer.</p>
@@ -81,7 +81,7 @@
     <div class="panel-body product-list" ng-show="vm.selectedView == 'products'">
         <div class="row">
             <div class="col-md-1 half">
-                <span class="fa fa-2x fa-warning text-danger"></span>
+                <span class="fa fa-2x fa-exchange"></span>
             </div>
             <div class="col-md-11">
                 <p ng-show="@customer.ExpressionFor(x => x.Products.Count) == 0">There are no products for this customer.</p>
