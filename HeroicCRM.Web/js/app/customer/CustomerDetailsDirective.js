@@ -21,7 +21,7 @@
         vm.selectedView = 'details';
         vm.setView = setView;
         vm.edit = edit;
-        vm.addOpportunity = addOpportunity;
+        vm.addWish = addWish;
         vm.addRisk = addRisk;
         vm.customer = $scope.customer;
 
@@ -37,9 +37,9 @@
             });
         }
 
-        function addOpportunity() {
+        function addWish() {
             $modal.open({
-                template: '<add-opportunity customer="customer" />',
+                template: '<add-wish customer="customer" />',
                 scope: angular.extend($scope.$new(true), { customer: vm.customer })
             });
         }

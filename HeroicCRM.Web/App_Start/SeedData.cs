@@ -121,9 +121,9 @@ namespace HeroicCRM.Web
 				HomePhone = "(555) 123-4555",
 				WorkPhone = "(555) 321-5444",
 				CreateDate = DateTime.Today.ToStartOfMonth().AddDays(-15),
-				Opportunities = new List<Opportunity>
+				Wishes = new List<Wish>
 				{
-					new Opportunity{Title = "Expanding business", Description = "Warwick's business is booming.  He's considering acquiring a competitor.  If that happens, he'll need a *lot* of custom development to integrate the two systems."}
+					new Wish{Title = "Expanding business", Description = "Warwick's business is booming.  He's considering acquiring a competitor.  If that happens, he'll need a *lot* of custom development to integrate the two systems."}
 				}
 			});
 
@@ -192,9 +192,9 @@ namespace HeroicCRM.Web
 				HomePhone = "(555) 123-4555",
 				WorkPhone = "(555) 321-5444",
 				CreateDate = DateTime.Today.ToStartOfMonth().AddDays(15),
-				Opportunities = new List<Opportunity>
+				Wishes = new List<Wish>
 				{
-					new Opportunity{Title = "Interested in on-site support", Description = "Zack likes the solution we developed for his business.  He's interested in our on-site support services, too."}
+					new Wish{Title = "Interested in on-site support", Description = "Zack likes the solution we developed for his business.  He's interested in our on-site support services, too."}
 				}
 			});
 		}

@@ -5,7 +5,7 @@ using HeroicCRM.Web.Core;
 
 namespace HeroicCRM.Web.Models
 {
-    public class AddOpportunityForm : IMapTo<Opportunity>
+    public class AddWishForm : IMapTo<Wish>
     {
         [HiddenInput]
         public int CustomerId { get; set; }

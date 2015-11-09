@@ -13,9 +13,9 @@
                 <i class="fa fa-user"></i> Info
             </a>
             <a class="btn btn-green" href=""
-               ng-class="{active: vm.selectedView == 'opportunities'}"
-               ng-click="vm.setView('opportunities')">
-                <i class="fa fa-usd"></i> Opportunities
+               ng-class="{active: vm.selectedView == 'wishes'}"
+               ng-click="vm.setView('wishes')">
+                <i class="fa fa-usd"></i> Wishes
             </a>
             <a class="btn btn-red" href=""
                ng-class="{active: vm.selectedView == 'risks'}"
@@ -57,23 +57,23 @@
         </tr>
     </table>
 
-    <div class="panel-body opportunity-list" ng-show="vm.selectedView == 'opportunities'">
+    <div class="panel-body wish-list" ng-show="vm.selectedView == 'wishes'">
         <div class="row">
             <div class="col-md-1 half">
                 <span class="fa fa-2x fa-dollar text-success"></span>
             </div>
             <div class="col-md-11">
-                <p ng-show="@customer.ExpressionFor(x => x.Opportunities.Count) == 0">There are no opportunities for this customer.</p>
-                @using (var opportunity = customer.Repeat(x => x.Opportunities, "opportunity"))
+                <p ng-show="@customer.ExpressionFor(x => x.Wishes.Count) == 0">There are no wishes for this customer.</p>
+                @using (var wish = customer.Repeat(x => x.Wishes, "wish"))
                 {
                     <hr ng-hide="$index == 0" />
                     <h3>
-                        @opportunity.BindingFor(x => x.Title)
+                        @wish.BindingFor(x => x.Title)
                     </h3>
-                    <p>@opportunity.BindingFor(x => x.Description)</p>
+                    <p>@wish.BindingFor(x => x.Description)</p>
                 }
                 <p>
-                    <a class="add-btn" href="" ng-click="vm.addOpportunity()">Add a new opportunity</a>
+                    <a class="add-btn" href="" ng-click="vm.addWish()">Add a new wish</a>
                 </p>
             </div>
         </div>

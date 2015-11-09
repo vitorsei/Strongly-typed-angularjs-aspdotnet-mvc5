@@ -2,7 +2,7 @@
 
 namespace HeroicCRM.Web.Core
 {
-	public class Opportunity
+	public class Wish
 	{
 		public int Id { get; set; }
 
@@ -14,7 +14,7 @@ namespace HeroicCRM.Web.Core
 
 		public Customer Customer { get; set; }
 
-		public Opportunity()
+		public Wish()
 		{
 			CreateDate = DateTime.Now;
 		}

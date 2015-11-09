@@ -68,11 +68,11 @@ textarea {
 	border-top: none;
 }
 
-.opportunity-list h3, .risk-list h3 {
+.wish-list h3, .risk-list h3 {
 	margin-top: 0;
 }
 
-.opportunity-list .add-btn,
+.wish-list .add-btn,
 .risk-list .add-btn {
 	display: inline-block;
 	font-size: 0.9em;

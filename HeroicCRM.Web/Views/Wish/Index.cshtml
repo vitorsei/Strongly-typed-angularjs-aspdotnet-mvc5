@@ -1,0 +1,23 @@
+﻿@model HeroicCRM.Web.Models.WishViewModel[]
+
+@{
+    ViewBag.Title = "Wishes";
+}
+
+<h1 class="page-header">
+	All Wishes
+</h1>
+
+@foreach (var wish in Model)
+{
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h4>
+				@wish.CustomerName - @wish.Title
+				<small class="pull-right">@wish.CreateDate.ToShortDateString()</small>
+			</h4>
+			<hr />
+			<p>@wish.Description</p>
+		</div>
+	</div>
+}

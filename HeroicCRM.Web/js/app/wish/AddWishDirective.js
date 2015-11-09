@@ -1,14 +1,14 @@
 ﻿(function () {
     'use strict';
 
-    window.app.directive('addOpportunity', addOpportunity);
+    window.app.directive('addWish', addWish);
 
-    function addOpportunity() {
+    function addWish() {
         return {
             scope: {
                 customer: "="
             },
-            templateUrl: '/opportunity/template/addOpportunity.tmpl.cshtml',
+            templateUrl: '/wish/template/addWish.tmpl.cshtml',
             controller: controller,
             controllerAs: 'vm'
         }
@@ -19,7 +19,7 @@
         var vm = this;
 
         vm.saving = false;
-        vm.opportunity = {
+        vm.wish = {
             customerId: $scope.customer.id
         }
 
@@ -28,14 +28,14 @@
         function add() {
             vm.saving = true;
 
-            $http.post('/Opportunity/Add', vm.opportunity)
+            $http.post('/Wish/Add', vm.wish)
 				.success(function (data) {
-				    $scope.customer.opportunities.push(data);
+				    $scope.customer.wishes.push(data);
 				    //Close the modal
 				    $scope.$parent.$close();
 				})
 				.error(function (data) {
-				    vm.errorMessage = "There was a problem adding the opportunity: " + data;
+				    vm.errorMessage = "There was a problem adding the wish: " + data;
 				})
 				.finally(function () {
 				    vm.saving = false;

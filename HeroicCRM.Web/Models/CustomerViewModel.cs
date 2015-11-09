@@ -25,7 +25,7 @@ namespace HeroicCRM.Web.Models
 
 		public DateTime? TerminationDate { get; set; }
 
-		public IList<CustomerOpportunityViewModel> Opportunities { get; set; }
+		public IList<CustomerWishViewModel> Wishes { get; set; }
 
 		public IList<CustomerRiskViewModel> Risks { get; set; }
 	}

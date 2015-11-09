@@ -3,7 +3,7 @@ using HeroicCRM.Web.Core;
 
 namespace HeroicCRM.Web.Models
 {
-	public class CustomerOpportunityViewModel : IMapFrom<Opportunity>
+	public class CustomerWishViewModel : IMapFrom<Wish>
 	{
 		public string Title { get; set; }
 
