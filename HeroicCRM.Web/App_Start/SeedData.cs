@@ -105,9 +105,9 @@ namespace HeroicCRM.Web
 				HomePhone = "(555) 123-4555",
 				WorkPhone = "(555) 321-5444",
 				CreateDate = DateTime.Today.ToStartOfMonth().AddDays(-20),
-				Risks = new List<Risk>()
+				Products = new List<Product>()
 				{
-					new Risk{Title = "Considering vendor switch", Description = "His contract is expiring next month, and he's evaluating other vendors.  He likes the services we provide, but feels he is paying too much."}
+					new Product{Title = "Considering vendor switch", Description = "His contract is expiring next month, and he's evaluating other vendors.  He likes the services we provide, but feels he is paying too much."}
 				}
 			});
 
@@ -137,9 +137,9 @@ namespace HeroicCRM.Web
 				HomePhone = "(555) 123-4555",
 				WorkPhone = "(555) 321-5444",
 				CreateDate = DateTime.Today.ToStartOfMonth().AddDays(-10),
-				Risks = new List<Risk>
+				Products = new List<Product>
 				{
-					new Risk{Title = "Customer may not pay", Description = "Odell is not pleased with the solution we developed.  He has threatened to stop all future payments, including outstanding invoices for work that has already been performed."}
+					new Product{Title = "Customer may not pay", Description = "Odell is not pleased with the solution we developed.  He has threatened to stop all future payments, including outstanding invoices for work that has already been performed."}
 				}
 			});
 		}

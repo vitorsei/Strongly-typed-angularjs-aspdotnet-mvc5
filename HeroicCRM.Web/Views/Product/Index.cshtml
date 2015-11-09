@@ -1,0 +1,23 @@
+﻿@model HeroicCRM.Web.Models.ProductViewModel[]
+
+@{
+	ViewBag.Title = "Products";
+}
+
+<h1 class="page-header">
+	All Products
+</h1>
+
+@foreach (var product in Model)
+{
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<h4>
+				@product.CustomerName - @product.Title
+				<small class="pull-right">@product.CreateDate.ToShortDateString()</small>
+			</h4>
+			<hr />
+			<p>@product.Description</p>
+		</div>
+	</div>
+}

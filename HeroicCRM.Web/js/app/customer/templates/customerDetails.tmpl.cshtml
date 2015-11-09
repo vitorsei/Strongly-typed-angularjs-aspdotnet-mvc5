@@ -18,9 +18,9 @@
                 <i class="fa fa-usd"></i> Wishes
             </a>
             <a class="btn btn-red" href=""
-               ng-class="{active: vm.selectedView == 'risks'}"
-               ng-click="vm.setView('risks')">
-                <i class="fa fa-exclamation-triangle"></i>Risks
+               ng-class="{active: vm.selectedView == 'products'}"
+               ng-click="vm.setView('products')">
+                <i class="fa fa-exclamation-triangle"></i>Products
             </a>
         </div>
     </div>
@@ -78,23 +78,23 @@
             </div>
         </div>
     </div>
-    <div class="panel-body risk-list" ng-show="vm.selectedView == 'risks'">
+    <div class="panel-body product-list" ng-show="vm.selectedView == 'products'">
         <div class="row">
             <div class="col-md-1 half">
                 <span class="fa fa-2x fa-warning text-danger"></span>
             </div>
             <div class="col-md-11">
-                <p ng-show="@customer.ExpressionFor(x => x.Risks.Count) == 0">There are no risks for this customer.</p>
-                @using (var risk = customer.Repeat(x => x.Risks, "risk"))
+                <p ng-show="@customer.ExpressionFor(x => x.Products.Count) == 0">There are no products for this customer.</p>
+                @using (var product = customer.Repeat(x => x.Products, "product"))
                 {
                     <hr ng-hide="$index == 0" />
                     <h3>
-                        @risk.BindingFor(x => x.Title)
+                        @product.BindingFor(x => x.Title)
                     </h3>
-                    <p>@risk.BindingFor(x => x.Description)</p>
+                    <p>@product.BindingFor(x => x.Description)</p>
                 }
                 <p>
-                    <a class="add-btn" href="" ng-click="vm.addRisk()">Add a new risk</a>
+                    <a class="add-btn" href="" ng-click="vm.addProduct()">Add a new product</a>
                 </p>
             </div>
         </div>

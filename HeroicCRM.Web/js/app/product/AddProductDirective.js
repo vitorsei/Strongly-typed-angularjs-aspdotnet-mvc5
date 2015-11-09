@@ -1,14 +1,14 @@
 ﻿(function () {
     'use strict';
 
-    window.app.directive('addRisk', addRisk);
+    window.app.directive('addProduct', addProduct);
 
-    function addRisk() {
+    function addProduct() {
         return {
             scope: {
                 customer: "="
             },
-            templateUrl: '/risk/template/addRisk.tmpl.cshtml',
+            templateUrl: '/product/template/addProduct.tmpl.cshtml',
             controller: controller,
             controllerAs: 'vm'
         }
@@ -19,7 +19,7 @@
         var vm = this;
 
         vm.saving = false;
-        vm.risk = {
+        vm.product = {
             customerId: $scope.customer.id
         }
 
@@ -28,14 +28,14 @@
         function add() {
             vm.saving = true;
 
-            $http.post('/Risk/Add', vm.risk)
+            $http.post('/Product/Add', vm.product)
 				.success(function (data) {
-				    $scope.customer.risks.push(data);
+				    $scope.customer.products.push(data);
 				    //Close the modal
 				    $scope.$parent.$close();
 				})
 				.error(function (data) {
-				    vm.errorMessage = 'There was a problem adding the risk: ' + data;
+				    vm.errorMessage = 'There was a problem adding the product: ' + data;
 				})
 				.finally(function () {
 				    vm.saving = false;

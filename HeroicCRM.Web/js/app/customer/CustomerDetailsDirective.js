@@ -22,7 +22,7 @@
         vm.setView = setView;
         vm.edit = edit;
         vm.addWish = addWish;
-        vm.addRisk = addRisk;
+        vm.addProduct = addProduct;
         vm.customer = $scope.customer;
 
         function setView(view) {
@@ -44,9 +44,9 @@
             });
         }
 
-        function addRisk() {
+        function addProduct() {
             $modal.open({
-                template: '<add-risk customer="customer" />',
+                template: '<add-product customer="customer" />',
                 scope: angular.extend($scope.$new(true), { customer: vm.customer })
             });
         }

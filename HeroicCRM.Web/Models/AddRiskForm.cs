@@ -5,7 +5,7 @@ using HeroicCRM.Web.Core;
 
 namespace HeroicCRM.Web.Models
 {
-    public class AddRiskForm : IMapTo<Risk>
+    public class AddProductForm : IMapTo<Product>
     {
         [HiddenInput]
         public int CustomerId { get; set; }

@@ -68,12 +68,12 @@ textarea {
 	border-top: none;
 }
 
-.wish-list h3, .risk-list h3 {
+.wish-list h3, .product-list h3 {
 	margin-top: 0;
 }
 
 .wish-list .add-btn,
-.risk-list .add-btn {
+.product-list .add-btn {
 	display: inline-block;
 	font-size: 0.9em;
 	margin-top: 1.5em;

@@ -3,7 +3,7 @@ using HeroicCRM.Web.Core;
 
 namespace HeroicCRM.Web.Models
 {
-	public class CustomerRiskViewModel : IMapFrom<Risk>
+	public class CustomerProductViewModel : IMapFrom<Product>
 	{
 		public string Title { get; set; }
 

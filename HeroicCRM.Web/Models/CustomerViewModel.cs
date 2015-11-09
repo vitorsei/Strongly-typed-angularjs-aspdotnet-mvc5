@@ -27,6 +27,6 @@ namespace HeroicCRM.Web.Models
 
 		public IList<CustomerWishViewModel> Wishes { get; set; }
 
-		public IList<CustomerRiskViewModel> Risks { get; set; }
+		public IList<CustomerProductViewModel> Products { get; set; }
 	}
 }

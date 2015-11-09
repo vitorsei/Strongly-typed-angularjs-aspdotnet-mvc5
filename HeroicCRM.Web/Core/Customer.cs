@@ -27,7 +27,7 @@ namespace HeroicCRM.Web.Core
 
 		public IList<Wish> Wishes { get; set; }
 
-		public IList<Risk> Risks { get; set; }
+		public IList<Product> Products { get; set; }
 
 		public Customer()
 		{

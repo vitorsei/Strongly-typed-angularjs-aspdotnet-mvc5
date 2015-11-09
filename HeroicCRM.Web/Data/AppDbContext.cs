@@ -10,6 +10,6 @@ namespace HeroicCRM.Web.Data
 
 		public IDbSet<Wish> Wishes { get; set; }
 
-		public IDbSet<Risk> Risks { get; set; }
+		public IDbSet<Product> Products { get; set; }
 	}
 }

@@ -215,8 +215,8 @@
     <Content Include="js\app\report\NewCustomersReportDirective.js" />
     <Content Include="js\app\report\templates\lostCustomersReport.tmpl.html" />
     <Content Include="js\app\report\templates\newCustomersReport.tmpl.html" />
-    <Content Include="js\app\risk\AddRiskDirective.js" />
-    <Content Include="js\app\risk\templates\addRisk.tmpl.cshtml" />
+    <Content Include="js\app\product\AddProductDirective.js" />
+    <Content Include="js\app\product\templates\addProduct.tmpl.cshtml" />
     <Content Include="js\app\utility\ArrayExtensions.js" />
     <Content Include="js\app\utility\FormGroupValidationDirective.js" />
     <Content Include="js\app\utility\InputValidationIconsDirective.js" />
@@ -249,10 +249,10 @@
     <Compile Include="Controllers\WishController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
-    <Compile Include="Controllers\RiskController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Core\Customer.cs" />
     <Compile Include="Core\Wish.cs" />
-    <Compile Include="Core\Risk.cs" />
+    <Compile Include="Core\Product.cs" />
     <Compile Include="Core\User.cs" />
     <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -276,10 +276,10 @@
     <Compile Include="Models\NewCustomerReportViewModel.cs" />
     <Compile Include="Models\AddWishForm.cs" />
     <Compile Include="Models\CustomerWishViewModel.cs" />
-    <Compile Include="Models\CustomerRiskViewModel.cs" />
+    <Compile Include="Models\CustomerProductViewModel.cs" />
     <Compile Include="Models\WishViewModel.cs" />
     <Compile Include="Models\ProfileForm.cs" />
-    <Compile Include="Models\RiskViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\DateExtensions.cs" />
     <Compile Include="Utilities\JsonExtensions.cs" />
@@ -305,7 +305,7 @@
     <None Include="Views\Wish\Index.cshtml" />
     <None Include="Views\Profile\Index.cshtml" />
     <None Include="Views\Report\Index.cshtml" />
-    <None Include="Views\Risk\Index.cshtml" />
+    <None Include="Views\Product\Index.cshtml" />
     <None Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">

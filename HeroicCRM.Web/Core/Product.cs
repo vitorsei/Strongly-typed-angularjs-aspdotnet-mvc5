@@ -2,7 +2,7 @@ using System;
 
 namespace HeroicCRM.Web.Core
 {
-	public class Risk
+	public class Product
 	{
 		public int Id { get; set; }
 
@@ -14,7 +14,7 @@ namespace HeroicCRM.Web.Core
 
 		public Customer Customer { get; set; }
 
-		public Risk()
+		public Product()
 		{
 			CreateDate = DateTime.Today;
 		}
